@@ -1,2 +1,2 @@
-require './app'
+require './pistolet'
 run Sinatra::Application

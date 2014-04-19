@@ -1,5 +1,7 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require './config/environment'
 
 get '/' do
-  'this is Pistolet'
+  'This is Pistolet'
 end

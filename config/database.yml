@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: pistolet
+  username: pistolet
+  password: pistolet
+  host: localhost
