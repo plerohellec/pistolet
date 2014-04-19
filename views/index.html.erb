@@ -1,0 +1,28 @@
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="/add_and_remove.js"></script>
+
+<h3>Welcome to Pistolet</h3>
+<form id="new_member" action="/submit" method="POST">
+  <input type="text" name="membre[nom]" value="Entrez votre nom" />
+  <input type="text" name="membre[prenom]" value="Entrez votre prenom" />
+  <input type="submit" value="Submit" />
+</form>
+
+<% if @membres && @membres.any? %>
+  <p>Tous les membres sont la:</p>
+<% else %>
+  <% @membres = [] %>
+<% end %>
+
+<div id='members'>
+  <ul class='list'>
+    <% @membres.each do |membre| %>
+      <li id="liid<%= membre.id %>"><%= "#{membre.prenom} #{membre.nom}" %>
+        <a id="remove_member" data-id="<%= membre.id %>" href="#">Supprimer</a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+
