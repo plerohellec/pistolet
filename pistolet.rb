@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require File.join(File.dirname(__FILE__), 'config/environment')
 require File.join(File.dirname(__FILE__), 'models/membre')
 
+set :bind, '0.0.0.0'
 set :port, 80
 
 get '/' do
