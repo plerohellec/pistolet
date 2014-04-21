@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'erubis'
 require File.join(File.dirname(__FILE__), 'config/environment')
 require File.join(File.dirname(__FILE__), 'models/membre')
 
+set :erb, :escape_html => true
 set :bind, '0.0.0.0'
 set :port, 80
 
