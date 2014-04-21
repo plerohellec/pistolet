@@ -7,7 +7,7 @@ $( document ).ready(function() {
           url: add_frm.attr('action'),
           data: add_frm.serialize(),
           success: function (data) {
-              $('#members ul').append( $('<li>').append(data));
+              $('<li>').append(data).hide().prependTo($('#members ul')).slideDown('slow');
           }
       });
       ev.preventDefault();
@@ -22,7 +22,14 @@ $( document ).ready(function() {
             "membre[id]" : $(this).attr("data-id")
             },
           success: function (data) {
-              $('#liid' + data).remove();
+              $('#liid' + data).animate({
+                  height: '0px'
+              }, {
+                  duration: 1000,
+                  complete: function() {
+                      $(this).remove();
+                  }
+              });
           }
       });
       ev.preventDefault();

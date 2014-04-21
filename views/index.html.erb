@@ -10,7 +10,7 @@
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="/add_and_remove.js"></script>
 
-<h3>Welcome to Pistolet</h3>
+<h3>Inscris toi au club des Pistolets à Billes !</h3>
 <form id="new_member" action="/submit" method="POST">
   <input type="text" name="membre[nom]" value="Entrez votre nom" />
   <input type="text" name="membre[prenom]" value="Entrez votre prenom" />
@@ -18,7 +18,7 @@
 </form>
 
 <% if @membres && @membres.any? %>
-  <p>Tous les membres sont la:</p>
+  <p>Tous les membres sont là:</p>
 <% else %>
   <% @membres = [] %>
 <% end %>

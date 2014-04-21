@@ -16,7 +16,7 @@ end
 post '/submit' do
   @membre = Membre.new(params[:membre])
   if @membre.save
-    "#{@membre.full_name} just joined!"
+    "#{@membre.full_name} vient de nous rejoindre"
   else
     "Sorry, there was an error!"
   end
